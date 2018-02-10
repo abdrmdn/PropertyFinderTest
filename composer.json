@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "PropertyFinder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "PropertyFinder\\Tests\\": "tests/" }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
