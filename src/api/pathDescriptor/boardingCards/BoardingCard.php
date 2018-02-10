@@ -35,17 +35,39 @@ class BoardingCard
         $desc =
             'take ' .
             $this->card[BoardingCardEnum::TYPE] .
-            ' from ' .
+            (isset($this->card[BoardingCardEnum::TRANSPORT_NUMBER])
+                ? ' ' . $this->card[BoardingCardEnum::TRANSPORT_NUMBER] . ' '
+                : ' ') .
+            'from ' .
             $this->card[BoardingCardEnum::FROM] .
             ' to ' .
-            $this->card[BoardingCardEnum::DESTINATION] . '.';
-
+            $this->card[BoardingCardEnum::DESTINATION] .
+            '.';
+        if (isset($this->card[BoardingCardEnum::GATE])) {
+            $desc .= ' Gate ' . $this->card[BoardingCardEnum::GATE] . ', ';
+        }
         if (isset($this->card[BoardingCardEnum::SEAT_NUMBER])) {
-            $desc .= 'Seat ' . $this->card[BoardingCardEnum::SEAT_NUMBER];
+            $desc .= 'Sit in seat ' . $this->card[BoardingCardEnum::SEAT_NUMBER];
         } else {
             $desc .= self::NO_SEAT_ASSIGNMENT;
         }
 
         return $desc;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrom()
+    {
+        return $this->card[BoardingCardEnum::FROM];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDestination()
+    {
+        return $this->card[BoardingCardEnum::DESTINATION];
     }
 }

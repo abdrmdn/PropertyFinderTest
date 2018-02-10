@@ -11,9 +11,15 @@ class pathDescriptor
      * @param BoardingCards $boardingCards
      *
      * @return array
+     * @throws boardingCards\exceptions\BoardingCardBrokenChainException
      */
     public function describeUnorderedBoardingCards(BoardingCards $boardingCards) : array
     {
+        if (count($boardingCards->toArray()) == 0) {
+            return [];
+        }
+        $boardingCards->orderCards();
+
         return $this->describeCards($boardingCards);
     }
 
