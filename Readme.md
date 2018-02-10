@@ -9,7 +9,7 @@
 * Having a proper router would’ve been very good , but since not much, its not needed.
 
 
-##How to run the test:
+## How to run the test:
 Just Run the command :
 ```
 vendor/bin/phpunit
@@ -17,12 +17,12 @@ vendor/bin/phpunit
 phpunit config already set, so no need to provide anything for the command.
 
 
-##Check on browser:
+## Check on browser:
 Run php server on index.php
 and it will connect to the only controller.
 
 
-##Whats missing:
+## Whats missing:
 * UI to play around with the api
 * proper boarding cards types
 * boarding cards factory
