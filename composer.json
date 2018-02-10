@@ -1,7 +1,8 @@
 {
     "autoload": {
         "psr-4": {
-            "PropertyFinder\\": "src/"
+            "PropertyFinder\\": "src/",
+            "PropertyFinder\\app\\": "app/"
         }
     },
     "autoload-dev": {
